@@ -1,0 +1,40 @@
+{
+  "name": "template",
+  "version": "0.1.1",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "description": "Starter template for typescript packages",
+  "scripts": {
+    "dev": "vitest",
+    "start": "jiti dist/index.js",
+    "test": "vitest run",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc",
+    "release": "pnpm run build && changeset publish"
+  },
+  "keywords": [
+    "zod",
+    "pattern matcher",
+    "typescript"
+  ],
+  "author": "Ian Kaplan",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-plugin-jsonc": "^2.9.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-typescript-sort-keys": "^2.3.0",
+    "jsonc-eslint-parser": "^2.3.0",
+    "npm-package-json-lint": "^7.0.0",
+    "npm-package-json-lint-config-default": "^6.0.0",
+    "prettier": "^3.0.0",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.5",
+    "vitest": "^0.28.4",
+    "zod": "^3.20.2"
+  }
+}
