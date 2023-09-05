@@ -1,40 +1,47 @@
 {
-  "name": "template",
+  "name": "@pushpress/events",
   "version": "0.1.1",
+  "files": [
+    "dist",
+    "src",
+    "json"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "description": "Starter template for typescript packages",
+  "description": "Typescript Library for publishing and subscribing to PushPress Events",
   "scripts": {
-    "dev": "vitest",
     "start": "jiti dist/index.js",
     "test": "vitest run",
-    "build": "tsup src/index.ts --format cjs,esm --dts",
-    "lint": "tsc",
-    "release": "pnpm run build && changeset publish"
+    "gen": "jiti src/generate-json.ts",
+    "build": "tsc",
+    "typecheck": "vitest typecheck",
+    "release": "pnpm run build && changeset publish",
+    "prebuild": "pnpm gen",
+    "prepublish": "npm run build"
   },
-  "keywords": [
-    "zod",
-    "pattern matcher",
-    "typescript"
-  ],
-  "author": "Ian Kaplan",
-  "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
+    "@types/node": "^20.5.8",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "eslint": "^8.44.0",
     "eslint-plugin-jsonc": "^2.9.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-typescript-sort-keys": "^2.3.0",
+    "jiti": "^1.19.3",
     "jsonc-eslint-parser": "^2.3.0",
     "npm-package-json-lint": "^7.0.0",
     "npm-package-json-lint-config-default": "^6.0.0",
     "prettier": "^3.0.0",
-    "tsup": "^6.5.0",
     "typescript": "^4.9.5",
     "vitest": "^0.28.4",
-    "zod": "^3.20.2"
+    "zod": "^3.22.2"
+  },
+  "dependencies": {
+    "@types/amqplib": "^0.10.1",
+    "amqplib": "^0.10.3",
+    "ts-pattern": "^5.0.5",
+    "zod-to-json-schema": "^3.21.4"
   }
 }

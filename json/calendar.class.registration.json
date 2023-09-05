@@ -1,0 +1,23 @@
+{
+  "$ref": "#/definitions/calendar.class.registration",
+  "definitions": {
+    "calendar.class.registration": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt"
+      ],
+      "additionalProperties": false,
+      "description": "registration event schema"
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
